@@ -9,20 +9,17 @@ with open(csvpath, 'r') as csvfile:
 
     #month_list = (list(csvreader))
     #total_months = len(month_list)
-
-    for row in csvreader:
-        month_list = list(row[0])
-        total_months = len()
-
+    row_total = 0
     total = 0
     for row in csvreader:
+        row_total += 1
         total = total + int(row[1])
 
     
 
 
 
-    #print(f"Total Months: {total_months}")
+    print(f"Total Months: {row_total}")
     print(f"Total Profit: ${total}")
     #print(f"Average Profit: {mean_profit}")
     #print(f"High Profit: ${max_profit}")
