@@ -1,5 +1,6 @@
 import os
 import csv
+import sys
 
 csvpath = os.path.join('Resources', 'budget_data.csv')
 
@@ -29,11 +30,24 @@ with open(csvpath, 'r') as csvfile:
     max_date = str(month[x_list.index(max(x_list)) + 1])
     min_date = str(month[x_list.index(min(x_list)) + 1])
 
+
+def Analysis():
     print("")
     print("Financial Analysis")
     print("-----------------------------------")
     print(f"Total Months: {row_total}")
     print(f"Total Profit: ${total}")
-    print(f"Average Profit: ${x_avg}")
-    print(f"High Profit: {max_date} (${max_profit})")
-    print(f"Low Profit: {min_date} (${min_profit})")
+    print(f"Average Change: ${x_avg}")
+    print(f"Greatest Increase in Profit: {max_date} (${max_profit})")
+    print(f"Greatest Decrease in Profits: {min_date} (${min_profit})")
+
+Analysis()
+#TXT OUTPUT 
+
+output_path = os.path.join('Analysis', 'Financial_Analysis.txt')
+
+with open(output_path, 'a') as f:
+    sys.stdout = f
+    Analysis()
+
+
