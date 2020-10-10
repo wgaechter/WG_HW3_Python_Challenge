@@ -7,12 +7,11 @@ election_csv = os.path.join('Resources', 'election_data.csv')
 with open(election_csv, 'r') as csvfile:
     csvreader = csv.DictReader(csvfile, delimiter=',')
 
-    #Vote COunt Variables
+    #Vote Count Variables
     Khan_Votes = 0
     Correy_Votes = 0
     Li_Votes = 0
     OTooley_Votes = 0
-    Extra_Votes = 0
 
     #Vote Counter Loop
     for row in csvreader:
@@ -60,5 +59,11 @@ def Election_Results():
 
 Election_Results()
 
+#TXT OUTPUT 
 
+output_path = os.path.join('Analysis', 'Election_Results.txt')
+
+with open(output_path, 'a') as f:
+    sys.stdout = f
+    Election_Results()
 
