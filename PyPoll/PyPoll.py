@@ -26,9 +26,20 @@ with open(election_csv, 'r') as csvfile:
         if candidate == "O'Tooley":
             OTooley_Votes = (OTooley_Votes + 1)
 
-
+    #Total Tally counter
     Total_Votes = (Khan_Votes + Correy_Votes + Li_Votes + OTooley_Votes)
     
+    #Percentage Finder
+
+    Khan_Percent = (Khan_Votes / Total_Votes) * 100
+
+    Correy_Percent = (Correy_Votes / Total_Votes) * 100
+    
+    Li_Percent = (Li_Votes / Total_Votes) * 100
+
+    OTooley_Percent = (OTooley_Votes / Total_Votes) * 100
+
+    #Cand_list = [Khan_Votes, Correy_Votes, Li_Votes, OTooley_Votes]
 
 #def Election_Results()
 print("")
@@ -36,11 +47,13 @@ print("Election Results")
 print("--------------------------")
 print(f"Total Votes: {Total_Votes}")
 print("--------------------------")
-print(f"Khan: {Khan_Votes}")
-print(f"Correy: {Correy_Votes}")
-print(f"Li: {Li_Votes}")
-print(f"OTooley: {OTooley_Votes}")
+print(f"Khan: {Khan_Percent} ({Khan_Votes})")
+print(f"Correy: {Correy_Percent} ({Correy_Votes})")
+print(f"Li: {Li_Percent} ({Li_Votes})")
+print(f"OTooley: {OTooley_Percent} ({OTooley_Votes})")
 print("--------------------------")
-print(f"Winner: {winner}")
+#print(f"Winner: {winner}")
 print("--------------------------")
+
+
 
